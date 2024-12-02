@@ -79,7 +79,12 @@ helm install jaeger jaegertracing/jaeger -n tracing --values jaeger-values.yaml
 kubectl port-forward svc/jaeger-query 8080:80 -n tracing
 
 ```
+### if you are uisng ec2 instance as node in eks then use
+- Command forwards port 8080 on your local machine to the Jaeger Query service, allowing you to access the Jaeger UI locally.
+```bash
+kubectl port-forward svc/jaeger-query 8080:80 -n tracing --address 0.0.0.0
 
+```
 ## 🧼 Clean Up
 ```bash
 
